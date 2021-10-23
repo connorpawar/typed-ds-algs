@@ -16,18 +16,20 @@ export class Queue<T> {
   public enqueue = (item: T) => {
     if (this.isFull()) throw new Error('Queue is already full!');
 
+    this.length++;
     this.queue.unshift(item);
   };
 
   public dequeue = (): T => {
     if (this.isEmpty()) throw new Error('Queue is already empty!');
 
+    this.length--;
     return this.queue.pop() || this.queue[0];
   };
 
   public peek = (): T => {
     if (this.isEmpty()) throw new Error('Queue is empty');
 
-    return this.queue[0];
+    return this.queue[this.length - 1];
   };
 }
