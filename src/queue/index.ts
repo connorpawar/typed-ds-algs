@@ -4,9 +4,9 @@ export class Queue<T> {
   private readonly maxLength: number;
 
   public constructor(max?: number) {
-    this.maxLength = max && max > 0 ? max : 10;
+    this.maxLength = max ?? 10;
     this.length = 0;
-    this.queue = new Array<T>(this.maxLength);
+    this.queue = [];
   }
 
   public isEmpty = () => this.length === 0;
@@ -24,7 +24,7 @@ export class Queue<T> {
     if (this.isEmpty()) throw new Error('Queue is already empty!');
 
     this.length--;
-    return this.queue.pop() || this.queue[0];
+    return this.queue.pop() as T;
   };
 
   public peek = (): T => {
@@ -32,4 +32,6 @@ export class Queue<T> {
 
     return this.queue[this.length - 1];
   };
+
+  public getQueue = () => this.queue;
 }

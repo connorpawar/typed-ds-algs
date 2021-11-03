@@ -4,9 +4,9 @@ export class Stack<T> {
   private readonly maxLength: number;
 
   public constructor(max?: number) {
-    this.maxLength = max && max > 0 ? max : 10;
+    this.maxLength = max ?? 10;
     this.length = 0;
-    this.stack = new Array<T>(this.maxLength);
+    this.stack = [];
   }
 
   public isEmpty = () => this.length === 0;
@@ -24,7 +24,7 @@ export class Stack<T> {
     if (this.isEmpty()) throw new Error('Stack is already empty!');
 
     this.length--;
-    return this.stack.pop() || this.stack[0];
+    return this.stack.pop() as T;
   };
 
   public peek = (): T => {
@@ -32,4 +32,6 @@ export class Stack<T> {
 
     return this.stack[this.length - 1];
   };
+
+  public getStack = () => this.stack;
 }

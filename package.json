@@ -1,6 +1,6 @@
 {
   "name": "typed-ds-algs",
-  "version": "0.0.0-development",
+  "version": "0.2.0",
   "description": "Messing around with implementing data structures in typescript",
   "main": "./lib/src/index.js",
   "files": [
