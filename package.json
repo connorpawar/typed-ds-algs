@@ -1,13 +1,13 @@
 {
   "name": "typed-ds-algs",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Messing around with implementing data structures in typescript",
   "main": "./lib/src/index.js",
   "files": [
     "lib/**/*"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && denoify",
     "clean": "rm -rf ./lib/",
     "cm": "cz",
     "coverage": "codecov",
@@ -42,7 +42,6 @@
     "url": "https://github.com/connorpawar/typed-sd-algs/issues"
   },
   "homepage": "https://github.com/connorpawar/typed-ds-algs#readme",
-  "dependencies": {},
   "devDependencies": {
     "@types/jest": "^27.0.2",
     "@types/node": "^12.20.11",
@@ -51,6 +50,7 @@
     "codecov": "^3.8.1",
     "commitizen": "^4.2.4",
     "cz-conventional-changelog": "^3.3.0",
+    "denoify": "^0.10.5",
     "eslint": "^7.25.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-node": "^11.1.0",

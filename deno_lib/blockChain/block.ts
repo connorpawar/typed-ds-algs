@@ -1,5 +1,5 @@
-import { createHash } from 'crypto';
-import { sha256 } from '../utils/hash';
+import { createHash } from 'https://deno.land/std@0.85.0/node/crypto.ts';
+import { sha256 } from '../utils/hash.ts';
 
 export class Block<T> {
   private timestamp: Date;
